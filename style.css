@@ -1,0 +1,37 @@
+body{
+  margin: 0 auto;
+  width:80%;
+}
+
+#monster_image{
+  width:100%;
+}
+
+#status_monitor{
+  overflow: hidden;
+}
+
+#monster_status{
+  float: left;
+}
+#my_status{
+  float: right;
+}
+
+#controller{
+  overflow: hidden;
+  display:inline;
+}
+
+span#command{
+  float:right;
+}
+span#ok_button{
+  float: right;
+}
+span#comment{
+  float: left;
+}
+span#action_form{
+  float: left;
+}
