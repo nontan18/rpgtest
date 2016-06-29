@@ -21,7 +21,8 @@ var ok_button2 = '<input type="button" value="ok" onclick="action2();">';
 var ok_button3 = '<input type="button" value="ok" onclick="action3();">';
 var ok_button4 = '<input type="button" value="ok" onclick="action4();">';
 
-var comment
+var comment;
+var win_count = 1;
 
 
 function change_button(ok_button) {
