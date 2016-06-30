@@ -20,6 +20,7 @@ var ok_button1 = '<input type="button" value="ok" onclick="action1();">';
 var ok_button2 = '<input type="button" value="ok" onclick="action2();">';
 var ok_button3 = '<input type="button" value="ok" onclick="action3();">';
 var ok_button4 = '<input type="button" value="ok" onclick="action4();">';
+var ok_button5 = '<input type="button" value="もう一度プレイする" onclick="first();">';
 
 var comment;
 var win_count = 0;
@@ -107,13 +108,28 @@ function draw_view() {
     document.getElementById('my_gard').innerHTML = my_gard;
 
     document.getElementById('comment').innerHTML = comment;
+    document.getElementById('monster_image').innerHTML = '<img id="image" src="./' + monster_image + '">';
 }
 
 
 function first() {
+
+    monster_flag = false;
+    my_flag = false;
+    win_flag = false;
     monster_name = '村井純';
+    monster_image = 'murai.jpg';
+    monster_hp = 255;
+    monster_attack_point = 30;
+    monster_gard = false;
     comment = monster_name + 'が現れた。どうする？';
+    my_hp = 255;
+    my_attack_point = 30;
+    my_gard = false;
+    win_count = 0;
+    document.getElementById('action_form').style.display = "block";
     draw_view();
+    change_button(ok_button1);
 }
 
 function my_action() {
@@ -158,7 +174,6 @@ function action1() {
         document.getElementById('action_form').style.display = "none";
         comment = 'YOU WIN';
         win();
-        change_button(ok_button4);
 
     } else {
         draw_view();
@@ -173,7 +188,7 @@ function action2() {
     if (my_hp == 0) {
         draw_view();
         comment = 'YOU LOSE';
-        change_button(ok_button4);
+        change_button(ok_button5);
     } else {
         draw_view();
         change_button(ok_button3);
@@ -197,22 +212,24 @@ function action4() {
 
 
 function win(){
-  win_count += 1;
+  win_count = win_count + 1;
   if (win_count == 1) {
-    var monster_image = 'モンスターの画像URL';
-    var monster_name = '河添';
-    var monster_hp = 255;
-    var monster_attack_point = 30;
-    var monster_gard = false;
+    monster_image = 'kawazoe.jpg';
+    monster_name = '河添';
+    monster_hp = 255;
+    monster_attack_point = 30;
+    monster_gard = false;
+    change_button(ok_button4);
   }else if (win_count == 2) {
-    var monster_image = 'モンスターの画像URL';
-    var monster_name = '福沢諭吉';
-    var monster_hp = 255;
-    var monster_attack_point = 30;
-    var monster_gard = false;
+    monster_image = 'fukuzawa.jpg';
+    monster_name = '福沢諭吉';
+    monster_hp = 255;
+    monster_attack_point = 30;
+    monster_gard = false;
+    change_button(ok_button4);
   }else if (win_count == 3) {
-
+    comment = "おめでとう";
+    draw_view();
+    change_button(ok_button5);
   }
-
-  change_button(ok_button4);
 }
