@@ -22,7 +22,7 @@ var ok_button3 = '<input type="button" value="ok" onclick="action3();">';
 var ok_button4 = '<input type="button" value="ok" onclick="action4();">';
 
 var comment;
-var win_count = 1;
+var win_count = 0;
 
 
 function change_button(ok_button) {
@@ -112,7 +112,7 @@ function draw_view() {
 
 function first() {
     monster_name = '村井純';
-    comment = '村井純が現れた。どうする？';
+    comment = monster_name + 'が現れた。どうする？';
     draw_view();
 }
 
@@ -157,6 +157,7 @@ function action1() {
         draw_view();
         document.getElementById('action_form').style.display = "none";
         comment = 'YOU WIN';
+        win();
         change_button(ok_button4);
 
     } else {
@@ -187,5 +188,31 @@ function action3() {
 }
 
 function action4() {
+    comment = monster_name + 'が現れた。どうする？';
     draw_view();
+    document.getElementById('action_form').style.display = "block";
+    change_button(ok_button1);
+}
+
+
+
+function win(){
+  win_count += 1;
+  if (win_count == 1) {
+    var monster_image = 'モンスターの画像URL';
+    var monster_name = '河添';
+    var monster_hp = 255;
+    var monster_attack_point = 30;
+    var monster_gard = false;
+  }else if (win_count == 2) {
+    var monster_image = 'モンスターの画像URL';
+    var monster_name = '福沢諭吉';
+    var monster_hp = 255;
+    var monster_attack_point = 30;
+    var monster_gard = false;
+  }else if (win_count == 3) {
+
+  }
+
+  change_button(ok_button4);
 }
