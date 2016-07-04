@@ -8,16 +8,18 @@
     </script>
 </head>
 
-<body onload="first();">
-    <img id="monster_image" src="./murai.jpg">
+<body>
+    <div id ="jun_image">
+      <img src="./level1.jpg">
+    </div>
     <div id="status_monitor">
         <div id="monster_status">
-            モンスターの名前：
+            モンスターの名前：村井純
             <span id="monster_name">
                 モンスターの名前
             </span>
-            <br /> モンスターのHP：
-            <span id="monster_hp">
+            <br /> 純の満足レベル：
+            <span id="jun_level">
                 255
             </span>
             <br /> モンスターの攻撃力：
@@ -27,33 +29,21 @@
             <span id="monster_gard">
             </span>
         </div>
-
-        <div id="my_status">
-            プレイヤーの名前：
-            <span id="my_name">プレイヤーの名前</span>
-            <br /> プレイヤーのHP：
-            <span id="my_hp">255</span>
-            <br /> プレイヤーの攻撃力：
-            <span id="my_attack_point"></span>
-            <br /> プレイヤーの状態：
-            <span id="my_gard"></span>
-            <br />
-        </div>
     </div>
     <br />
 
     <div id="controller">
-        <span id="comment">ここにコメントが表示されます</span>
+        <span id="comment">村井純</span>
         <span id="command">
     <form name="command">
         <span id="action_form">
-            <input type="radio" name="player_action" id="attack" value="attack" />ける
-            <input type="radio" name="player_action" id="recover" value="recover" />休む
-            <input type="radio" name="player_action" id="charge" value="charge" />ためる
-            <input type="radio" name="player_action" id="defence" value="defence" />守る
+            <input type="radio" name="player_action" id="give_food" value="give_food" />食べ物をあげる
+            <input type="radio" name="player_action" id="give_play" value="give_play" />一緒に遊ぶ
+            <input type="radio" name="player_action" id="give_sleep" value="give_sleep" />子守唄を歌う
+            <input type="radio" name="player_action" id="do_nothing" value="do_nothing" />何もしない
             </span>
         <span id="ok_button">
-            <input type="button" value="ok" onclick="action1();" />
+            <input type="button" value="ok" onclick="jun_action();" />
             </span>
         </form>
         </span>
